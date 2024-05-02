@@ -20,10 +20,10 @@
     </div>
 
 </header>
-<!--общий контейнер для всего-->
+<!--для всего-->
 <div class="container-fluid h-100">
     <div class="row h-100">
-        <!--контейнер для боковой панели Юзер Админ-->
+        <!--для боковой панели Юзер Админ-->
         <div class="col-md-2 g-0 py-3">
             <ul class="nav nav-pills flex-column">
                 <li class="nav-item">
@@ -37,17 +37,17 @@
                 </li>
             </ul>
         </div>
-        <!--контейнер для содержимого кнопок боковой панели-->
+        <!--для содержимого кнопок боковой панели-->
         <div class="col-md-10 bg-light gx-5 py-3 tab-content">
 
-            <!--контейнер для для правой части экрана-->
+            <!--правая часть экрана-->
             <div class="tab-pane fade show active" id="admin-panel" role="tabpanel"
                  aria-labelledby="admin-nav-link"
                  tabindex="0">
 
                 <h2>Admin panel</h2>
 
-                <!-- список вкладок таблиц-->
+                <!--список вкладок таблиц-->
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
                         <a class="nav-link active" href="/admin/allUsers" id="users-table-tab" data-bs-toggle="tab"
@@ -60,7 +60,7 @@
                            aria-selected="false">New User</a>
                     </li>
                 </ul>
-                <!--контейнер для содержимого вкладок таблиц-->
+                <!--для содержимого вкладок таблиц-->
                 <div class="tab-pane">
                     <!--содержимое вкладки Users Table-->
                     <div class="tab-pane fade show active" id="users-table-pane" role="tabpanel"
@@ -202,7 +202,7 @@
                                                                             multiple size="2">
                                                                         <option th:each="role: ${roles}"
                                                                                 th:value="${role.getId()}">
-                                                                            <th:block th:text="${role.getName()}">
+                                                                            <th:block th:text="${role.getName().replace('ROLE_', '')}">
                                                                             </th:block>
                                                                         </option>
                                                                     </select>

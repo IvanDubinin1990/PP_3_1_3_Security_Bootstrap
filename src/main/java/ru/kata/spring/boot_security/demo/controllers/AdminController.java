@@ -76,7 +76,6 @@ public class AdminController {
     public String infoUser(Model model, Principal principal) {
         User user = new User();
         model.addAttribute("user", user);
-        model.addAttribute("roles", roleService.getRoles());
         model.addAttribute("admin", userService.findUserByEmail(principal.getName()));
         return "admin/user";
     }

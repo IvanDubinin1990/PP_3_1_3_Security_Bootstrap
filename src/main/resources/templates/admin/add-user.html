@@ -63,42 +63,36 @@
                                 <div class="row bg-white ">
                                     <div class="col-4 mx-auto text-center font-weight-bold">
                                         <input type="text" th:field="*{name}" id="name" class="form-control" placeholder="name"/>
-                                        <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Username Error</div>
                                     </div>
                                 </div>
 
                                 <div class="row bg-white ">
                                     <div class="col-4 mx-auto text-center font-weight-bold">
                                         <input type="text" th:field="*{surname}" id="surname" class="form-control" placeholder="surname"/>
-                                        <div style="color:red" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}">Surname Error</div>
                                     </div>
                                 </div>
 
                                 <div class="row bg-white ">
                                     <div class="col-4 mx-auto text-center font-weight-bold">
                                         <input type="text" th:field="*{department}" id="department" class="form-control" placeholder="department"/>
-                                        <div style="color:red" th:if="${#fields.hasErrors('department')}" th:errors="*{department}">Department Error</div>
                                     </div>
                                 </div>
 
                                 <div class="row bg-white ">
                                     <div class="col-4 mx-auto text-center font-weight-bold">
                                         <input type="text" th:field="*{salary}" id="salary" class="form-control" placeholder="salary"/>
-                                        <div style="color:red" th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}">Salary Error</div>
                                     </div>
                                 </div>
 
                                 <div class="row bg-white ">
                                     <div class="col-4 mx-auto text-center font-weight-bold">
                                         <input type="text" th:field="*{email}" id="email" class="form-control" placeholder="email"/>
-                                        <div style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</div>
                                     </div>
                                 </div>
 
                                 <div class="row bg-white ">
                                     <div class="col-4 mx-auto text-center font-weight-bold">
                                         <input type="text" th:field="*{password}" id="password" class="form-control" placeholder="password"/>
-                                        <div style="color:red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</div>
                                     </div>
                                 </div>
 
@@ -107,14 +101,14 @@
                                     <select id="newUserRoles" class="form-select" name="roles"
                                             multiple size="2">
                                         <option th:each="role: ${roles}" th:value="${role.getId()}" >
-                                            <th:block th:text="${role.getName()}">
+                                            <th:block th:text="${role.getName().replace('ROLE_', '')}">
                                             </th:block>
                                         </option>
                                     </select>
                                 </label>
 
                                 <br>
-                                <button style="text-align: center" type="submit" id="newUserButton" class="btn btn-success">Add new user
+                                <button style="text-align: center" type="submit" class="btn btn-success">Add new user
                                 </button>
                             </div>
                         </form>
